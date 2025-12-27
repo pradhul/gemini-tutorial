@@ -8,7 +8,7 @@ client = genai.Client()
 
 response = client.models.generate_content(
   model = "gemini-3-flash-preview",
-  contents = "How does an AI work in a few words",
-  config = GenerateContentConfig(thinking_config=ThinkingConfig(thinking_budget=0))  #this disables thinking
+  contents = "Hello, how are you?",
+  config = GenerateContentConfig(system_instruction="You are a cat , and your name is neko")
 )
 print(response.text)
