@@ -1,0 +1,18 @@
+API Documentation: RESTful Service Endpoints
+
+The application provides a RESTful API for managing user data and resources. All endpoints require authentication via Bearer token in the Authorization header.
+
+GET /api/users
+Retrieves a list of all users. Supports pagination with query parameters: page (default: 1) and limit (default: 10). Returns JSON array of user objects containing id, name, email, and created_at fields.
+
+POST /api/users
+Creates a new user. Requires JSON body with name (string, required) and email (string, required, must be valid email format). Returns created user object with status code 201.
+
+PUT /api/users/:id
+Updates an existing user by ID. Requires JSON body with name and/or email fields. Returns updated user object with status code 200.
+
+DELETE /api/users/:id
+Deletes a user by ID. Returns status code 204 on successful deletion.
+
+Error responses follow standard HTTP status codes: 400 for bad requests, 401 for unauthorized access, 404 for not found, and 500 for server errors. All error responses include a JSON body with error message and code.
+
