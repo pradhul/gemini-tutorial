@@ -1,0 +1,23 @@
+Function: calculate_statistics(data, method='mean')
+
+This function calculates statistical measures from a given dataset. It supports multiple calculation methods including mean, median, mode, standard deviation, and variance.
+
+Parameters:
+- data: A list or array of numerical values. Must contain at least one element.
+- method: A string specifying the calculation method. Valid options are 'mean', 'median', 'mode', 'std', and 'variance'. Default is 'mean'.
+
+Returns:
+- A float representing the calculated statistic value.
+
+Raises:
+- ValueError: If data is empty or method is not recognized.
+- TypeError: If data contains non-numerical values.
+
+Example Usage:
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    result = calculate_statistics(numbers, method='mean')
+    print(result)  # Output: 5.5
+
+Implementation Notes:
+The function uses NumPy for efficient numerical computations. For large datasets, consider using vectorized operations. The function handles edge cases such as single-element arrays and empty inputs gracefully.
+
